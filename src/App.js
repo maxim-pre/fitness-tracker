@@ -55,7 +55,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen md:flex">
+    <div className="relative min-h-screen md:flex ">
       {/* mobile Nav */}
       <MobileNavBar nav={nav} setNav={setNav} />
       {nav && <MobileNav nav={nav} setNav={setNav} />}

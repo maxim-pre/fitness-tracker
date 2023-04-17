@@ -1,5 +1,11 @@
+import Pagination from "./pagination";
 const Workouts = () => {
-  return <div>workouts page</div>;
+  const pages = [1, 2, 3];
+  return (
+    <div>
+      <h1>My workouts</h1>
+    </div>
+  );
 };
 
 export default Workouts;
