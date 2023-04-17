@@ -13,7 +13,12 @@ const MobileNav = ({ nav, setNav }) => {
         >
           <FontAwesomeIcon icon={faXmark} />
         </div>
-        <MobileNavLink url={"/"} text={"Exercises"} nav={nav} setNav={setNav} />
+        <MobileNavLink
+          url={"/exercises"}
+          text={"Exercises"}
+          nav={nav}
+          setNav={setNav}
+        />
         <MobileNavLink
           url={"/"}
           text={"My workouts"}
@@ -21,7 +26,7 @@ const MobileNav = ({ nav, setNav }) => {
           setNav={setNav}
         />
         <MobileNavLink
-          url={"/"}
+          url={"/new_workout"}
           text={"Log workout"}
           nav={nav}
           setNav={setNav}

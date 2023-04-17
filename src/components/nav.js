@@ -7,9 +7,9 @@ const Nav = () => {
       <Logo />
       <hr />
       <nav>
-        <NavLink url={"/"} text={"Exercises"} />
+        <NavLink url={"/exercises"} text={"Exercises"} />
         <NavLink url={"/"} text={"My workouts"} />
-        <NavLink url={"/"} text={"Log workout"} />
+        <NavLink url={"/new_workout"} text={"Log workout"} />
       </nav>
     </aside>
   );
