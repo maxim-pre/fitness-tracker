@@ -1,6 +1,6 @@
 import Pagination from "./pagination";
+import { useState } from "react";
 const Workouts = () => {
-  const pages = [1, 2, 3];
   return (
     <div>
       <h1>My workouts</h1>

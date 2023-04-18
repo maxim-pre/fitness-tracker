@@ -69,7 +69,10 @@ function App() {
             path={"/exercises"}
             element={<Exercises exercises={exercises} />}
           />
-          <Route path={"/new_workout"} element={<NewWorkout />} />
+          <Route
+            path={"/new_workout"}
+            element={<NewWorkout exercises={exercises} />}
+          />
         </Routes>
       </div>
     </div>

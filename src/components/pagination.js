@@ -6,13 +6,20 @@ const Pagination = ({ currentPage, setCurrentPage, itemsCount, pageSize }) => {
   const maxPage = Math.floor(itemsCount / pageSize);
   let pages = [];
   if (currentPage === 1) {
-    pages = [1, 2, 3];
+    for (let i = currentPage; i < currentPage + 3; i++) {
+      if (i <= maxPage) pages.push(i);
+    }
   } else if (currentPage === maxPage) {
-    pages = [currentPage - 2, currentPage - 1, currentPage];
+    for (let i = currentPage - 2; i < currentPage + 1; i++) {
+      if (i >= 1) pages.push(i);
+    }
   } else {
     pages = [currentPage - 1, currentPage, currentPage + 1];
   }
 
+  if (maxPage <= 1) {
+    return null;
+  }
   return (
     <div className="flex bg-white rounded">
       <button
