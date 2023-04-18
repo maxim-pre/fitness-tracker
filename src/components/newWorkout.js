@@ -96,11 +96,11 @@ const NewWorkout = ({ exercises }) => {
   return (
     <div className="flex justify-center mb-24 mx-8">
       <form className="flex flex-col w-full">
-        <div className="flex justify-between">
+        <div className="flex justify-between w-full">
           <input
             type="text"
             placeholder="Workout Name..."
-            className="text-4xl outline-none"
+            className=" text-lg outline-none text-blue-700 font-bold"
             value={workout.name}
             onChange={(e) => {
               setWorkout({ ...workout, name: e.target.value });
@@ -111,6 +111,14 @@ const NewWorkout = ({ exercises }) => {
             onClick={(e) => {
               e.preventDefault();
               console.log(workout);
+              if (!localStorage.getItem("workouts")) {
+                window.localStorage.setItem("workouts", JSON.stringify([]));
+              }
+              const workouts = JSON.parse(
+                window.localStorage.getItem("workouts")
+              );
+              workouts.push(workout);
+              window.localStorage.setItem("workouts", JSON.stringify(workouts));
             }}
           >
             save
