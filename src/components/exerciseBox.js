@@ -1,6 +1,6 @@
 const ExerciseBox = ({ exercise }) => {
   return (
-    <div className="shadow-md ">
+    <div className="my-1 ">
       <h1 className="py-1 font-semibold">{exercise.name}</h1>
       <div>
         {exercise.sets.map((set, index) => {

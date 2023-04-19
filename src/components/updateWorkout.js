@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 const UpdateWorkout = ({ exercises }) => {
   const navigate = useNavigate();
   let { id } = useParams();
-  console.log(id);
   let workoutsData = JSON.parse(localStorage.getItem("workouts"));
   const handleUpdateWorkout = (workout) => {
     workoutsData.splice(id, 1);

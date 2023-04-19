@@ -33,7 +33,7 @@ const Workouts = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <h1 className="text-gray-700 text-lg mb-8 font-bold underline">
         My workouts
       </h1>
@@ -49,7 +49,7 @@ const Workouts = () => {
           );
         })}
       </div>
-      <div className="">
+      <div className="flex justify-center mb-4">
         <Pagination
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
