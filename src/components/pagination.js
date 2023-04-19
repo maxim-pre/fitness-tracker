@@ -3,20 +3,21 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const Pagination = ({ currentPage, setCurrentPage, itemsCount, pageSize }) => {
-  const maxPage = Math.floor(itemsCount / pageSize);
+  const maxPage = Math.ceil(itemsCount / pageSize);
+  console.log(maxPage);
   let pages = [];
   if (currentPage === 1) {
-    for (let i = currentPage; i < currentPage + 3; i++) {
+    for (let i = currentPage; i < currentPage + pageSize; i++) {
       if (i <= maxPage) pages.push(i);
     }
   } else if (currentPage === maxPage) {
-    for (let i = currentPage - 2; i < currentPage + 1; i++) {
+    for (let i = currentPage - (pageSize - 1); i < currentPage + 1; i++) {
       if (i >= 1) pages.push(i);
     }
   } else {
     pages = [currentPage - 1, currentPage, currentPage + 1];
   }
-
+  console.log(pages);
   if (maxPage <= 1) {
     return null;
   }

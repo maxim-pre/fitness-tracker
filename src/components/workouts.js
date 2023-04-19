@@ -1,13 +1,20 @@
-import Pagination from "./pagination";
 import { useState } from "react";
-import Workout from "./workout";
 import { useNavigate } from "react-router-dom";
+import Pagination from "./pagination";
+import Workout from "./workout";
 const Workouts = () => {
+  // state
+  const [currentPage, setCurrentPage] = useState(1);
   const [workouts, setWorkouts] = useState(
     JSON.parse(localStorage.getItem("workouts"))
   );
+  // constants and variables
   const navigate = useNavigate();
-
+  const pageSize = 3;
+  const startIndex = (currentPage - 1) * pageSize;
+  let itemsCount = workouts.length;
+  let filteredWorkouts = workouts.slice(startIndex, startIndex + pageSize);
+  // functions
   const handleDelete = (workout) => {
     let workoutsCopy = [...workouts];
     workoutsCopy = workoutsCopy.filter((workoutEntry) => {
@@ -24,13 +31,14 @@ const Workouts = () => {
     });
     navigate(`/update/${index}`);
   };
+
   return (
     <div>
       <h1 className="text-gray-700 text-lg mb-8 font-bold underline">
         My workouts
       </h1>
       <div className="flex flex-col mx-6">
-        {workouts.map((workout, index) => {
+        {filteredWorkouts.map((workout, index) => {
           return (
             <Workout
               workout={workout}
@@ -40,6 +48,14 @@ const Workouts = () => {
             />
           );
         })}
+      </div>
+      <div className="">
+        <Pagination
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          itemsCount={itemsCount}
+          pageSize={pageSize}
+        />
       </div>
     </div>
   );
