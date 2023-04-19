@@ -1,11 +1,15 @@
 import { useState } from "react";
 import SimpleExercise from "./simpleExercise";
 import WorkoutExercise from "./workoutExercise";
-const NewWorkout = ({ exercises }) => {
-  const [workout, setWorkout] = useState({ name: "", exercises: [] });
+import { useNavigate } from "react-router-dom";
+const NewWorkout = ({ exercises, workoutData, handleUpdateWorkout }) => {
+  const [workout, setWorkout] = useState(
+    workoutData ? { ...workoutData } : { name: "", exercises: [] }
+  );
   const [searchQuery, setSearchQuery] = useState("");
   const [addExercise, setAddExercise] = useState(false);
   const maxLen = 3;
+  const navigate = useNavigate();
   let filtered = exercises;
   if (searchQuery) {
     filtered = exercises.filter((exercise) => {
@@ -93,6 +97,16 @@ const NewWorkout = ({ exercises }) => {
     setWorkout({ ...workout, exercises: exercisesCopy });
   };
 
+  const handleSubmit = () => {
+    if (!localStorage.getItem("workouts")) {
+      window.localStorage.setItem("workouts", JSON.stringify([]));
+    }
+    const workouts = JSON.parse(window.localStorage.getItem("workouts"));
+    workouts.push(workout);
+    window.localStorage.setItem("workouts", JSON.stringify(workouts));
+    navigate("/");
+  };
+
   return (
     <div className="flex justify-center mb-24 mx-8">
       <form className="flex flex-col w-full">
@@ -110,15 +124,9 @@ const NewWorkout = ({ exercises }) => {
             className="bg-blue-700 text-white rounded px-6 focus:bg-blue-900 mt-2"
             onClick={(e) => {
               e.preventDefault();
-              console.log(workout);
-              if (!localStorage.getItem("workouts")) {
-                window.localStorage.setItem("workouts", JSON.stringify([]));
-              }
-              const workouts = JSON.parse(
-                window.localStorage.getItem("workouts")
-              );
-              workouts.push(workout);
-              window.localStorage.setItem("workouts", JSON.stringify(workouts));
+              handleUpdateWorkout
+                ? handleUpdateWorkout(workout)
+                : handleSubmit();
             }}
           >
             save

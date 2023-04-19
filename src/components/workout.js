@@ -1,5 +1,5 @@
 import ExerciseBox from "./exerciseBox";
-const Workout = ({ workout }) => {
+const Workout = ({ workout, handleDelete, handleUpdate }) => {
   const numExercises = workout.exercises.length;
   let width;
   if (numExercises === 2) {
@@ -10,7 +10,7 @@ const Workout = ({ workout }) => {
     width = "";
   }
   return (
-    <div className="mb-8 ">
+    <div className="mb-6  ">
       <div
         className={`flex justify-between pl-4 bg-blue-600 rounded p-1 ${width}`}
       >
@@ -18,10 +18,20 @@ const Workout = ({ workout }) => {
           {workout.name ? workout.name : "Untitled"}
         </h1>
         <div className="">
-          <button className="bg-blue-50 rounded p-1 text-blue-700 font-semibold mx-2">
+          <button
+            className="bg-blue-50 rounded p-1 text-blue-700 font-semibold mx-2"
+            onClick={() => {
+              handleUpdate(workout);
+            }}
+          >
             Update
           </button>
-          <button className="bg-red-500 rounded p-1 text-white font-semibold mx-2">
+          <button
+            className="bg-red-500 rounded p-1 text-white font-semibold mx-2"
+            onClick={() => {
+              handleDelete(workout);
+            }}
+          >
             Delete
           </button>
         </div>

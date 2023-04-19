@@ -7,6 +7,7 @@ import Nav from "./components/nav";
 import Exercises from "./components/exercises";
 import Workouts from "./components/workouts";
 import NewWorkout from "./components/newWorkout";
+import UpdateWorkout from "./components/updateWorkout";
 function App() {
   const [nav, setNav] = useState(false);
   const [exercises, setExercises] = useState([]);
@@ -72,6 +73,10 @@ function App() {
           <Route
             path={"/new_workout"}
             element={<NewWorkout exercises={exercises} />}
+          />
+          <Route
+            path={"update/:id"}
+            element={<UpdateWorkout exercises={exercises} />}
           />
         </Routes>
       </div>
