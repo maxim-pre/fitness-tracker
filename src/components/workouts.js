@@ -31,12 +31,16 @@ const Workouts = () => {
     });
     navigate(`/update/${index}`);
   };
-
   return (
     <div className="">
-      <h1 className="text-gray-700 text-lg mb-8 font-bold underline">
-        My workouts
+      <h1 className="text-blue-900 text-xl mb-8 font-bold ">
+        My workouts {`(${workouts.length})`}
       </h1>
+      {workouts.length === 0 && (
+        <div className="flex justify-center font-bold text-xl text-blue-500">
+          Currently No workouts logged...
+        </div>
+      )}
       <div className="flex flex-col mx-6">
         {filteredWorkouts.map((workout, index) => {
           return (

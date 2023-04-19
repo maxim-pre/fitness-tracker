@@ -25,7 +25,10 @@ const NewWorkout = ({ exercises, workoutData, handleUpdateWorkout }) => {
     const exercisesCopy = [...workout.exercises];
     exerciseList.forEach((exercise) => {
       if (!exercisesCopy.find((ex) => ex.name === exercise.name)) {
-        exercisesCopy.push({ name: exercise.name, sets: [] });
+        exercisesCopy.push({
+          name: exercise.name,
+          sets: [{ weight: 0, reps: 0 }],
+        });
       }
     });
 

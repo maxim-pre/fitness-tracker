@@ -22,9 +22,7 @@ const Exercises = ({ exercises }) => {
   };
   return (
     <div className="flex flex-col">
-      <h1 className="text-gray-700 text-lg mb-8 font-bold underline">
-        Exercises
-      </h1>
+      <h1 className="text-blue-900 text-xl mb-2 font-bold ">Exercises</h1>
       <input
         type="text"
         className="bg-gray-50 border border-gray-500 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-700 focus:outline-none focus:border-1 block mx-auto  p-2.5 placeholder:text-gray-500 mt-4"
