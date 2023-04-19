@@ -1,14 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import SimpleExercise from "./simpleExercise";
 import WorkoutExercise from "./workoutExercise";
-import { useNavigate } from "react-router-dom";
+import AddExerciseBox from "./addExerciseBox";
 const NewWorkout = ({ exercises, workoutData, handleUpdateWorkout }) => {
   const [workout, setWorkout] = useState(
     workoutData ? { ...workoutData } : { name: "", exercises: [] }
   );
   const [searchQuery, setSearchQuery] = useState("");
   const [addExercise, setAddExercise] = useState(false);
-  const maxLen = 3;
   const navigate = useNavigate();
   let filtered = exercises;
   if (searchQuery) {
@@ -16,17 +16,19 @@ const NewWorkout = ({ exercises, workoutData, handleUpdateWorkout }) => {
       return exercise.name.toLowerCase().startsWith(searchQuery.toLowerCase());
     });
   }
-  const filteredExercises = filtered.slice(0, maxLen);
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
   };
 
-  const handleAddExercise = (exercise) => {
+  const handleAddExercise = (exerciseList) => {
     const exercisesCopy = [...workout.exercises];
-    if (exercisesCopy.find((ex) => ex.name === exercise.name))
-      return setAddExercise(false);
-    exercisesCopy.push({ name: exercise.name, sets: [] });
+    exerciseList.forEach((exercise) => {
+      if (!exercisesCopy.find((ex) => ex.name === exercise.name)) {
+        exercisesCopy.push({ name: exercise.name, sets: [] });
+      }
+    });
+
     setWorkout({ ...workout, exercises: exercisesCopy });
     setAddExercise(false);
   };
@@ -114,14 +116,14 @@ const NewWorkout = ({ exercises, workoutData, handleUpdateWorkout }) => {
           <input
             type="text"
             placeholder="Workout Name..."
-            className=" text-lg outline-none text-blue-700 font-bold"
+            className=" text-xl outline-none text-blue-700 font-bold "
             value={workout.name}
             onChange={(e) => {
               setWorkout({ ...workout, name: e.target.value });
             }}
           />
           <button
-            className="bg-blue-700 text-white rounded px-6 focus:bg-blue-900 mt-2"
+            className="bg-blue-700 text-white rounded px-6 focus:bg-blue-900 mt-2 font-semibold"
             onClick={(e) => {
               e.preventDefault();
               handleUpdateWorkout
@@ -144,30 +146,11 @@ const NewWorkout = ({ exercises, workoutData, handleUpdateWorkout }) => {
         </button>
         {/* add exercise */}
         {addExercise && (
-          <div className="border border-gray-600 my-4 pb-4 flex items-center justify-center flex-col w-full">
-            <input
-              type="text"
-              className="bg-gray-50 border border-gray-500 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-700 focus:outline-none focus:border-1 block mx-auto  p-1 placeholder:text-gray-500 my-4"
-              placeholder="Search exercise..."
-              onChange={(e) => handleSearch(e)}
-            />
-            {filteredExercises.length === 0 ? (
-              <h1 className="">no matching exercises</h1>
-            ) : (
-              ""
-            )}
-            <div className="w-full flex flex-col">
-              {filteredExercises.map((exercise, index) => {
-                return (
-                  <SimpleExercise
-                    exercise={exercise}
-                    key={index}
-                    handleAddExercise={handleAddExercise}
-                  />
-                );
-              })}
-            </div>
-          </div>
+          <AddExerciseBox
+            exercises={filtered}
+            handleAddExercise={handleAddExercise}
+            handleSearch={handleSearch}
+          />
         )}
         {/* end add exercise */}
         {workout.exercises.map((exercise, index) => {

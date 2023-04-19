@@ -12,9 +12,9 @@ const WorkoutExercise = ({
   return (
     <div>
       <div className="flex justify-between items-center px-4 my-4">
-        <h1>{exercise.name}</h1>
+        <h1 className="text-blue-500 font-bold">{exercise.name}</h1>
         <button
-          className="bg-red-300 p-1 rounded-md text-sm"
+          className="bg-red-600 p-1 rounded text-sm text-white font-semibold focus:bg-red-700"
           onClick={(e) => {
             e.preventDefault();
             handleRemoveExercise(exercise);
@@ -28,7 +28,6 @@ const WorkoutExercise = ({
         <h2 className="col-span-2">Set</h2>
         <h2 className="col-span-2"> weight-Kg</h2>
         <h2 className="col-span-2">reps</h2>
-        <h2></h2>
       </div>
       {exercise.sets.map((set, index) => {
         return (

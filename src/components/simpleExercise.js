@@ -1,7 +1,9 @@
-const SimpleExercise = ({ exercise, handleAddExercise }) => {
+const SimpleExercise = ({ exercise, handleAddExercise, selected }) => {
   return (
     <div
-      className="grid grid-cols-2 grid-rows-1  grid-flow-row-dense  mx-4  p-2 rounded shadow-sm hover:bg-gray-200 cursor-pointer  border-b-2 border-gray-200"
+      className={`grid grid-cols-2 grid-rows-1  grid-flow-row-dense  mx-4  p-2 rounded  ${
+        !selected && "hover:bg-gray-200"
+      } cursor-pointer simpleExerciseBorder ${selected && "bg-blue-200 "} `}
       onClick={() => {
         handleAddExercise(exercise);
       }}

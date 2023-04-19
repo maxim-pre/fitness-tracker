@@ -6,7 +6,7 @@ const Workout = ({ workout, handleDelete, handleUpdate }) => {
   return (
     <div className="mb-6  ">
       <div
-        className={`flex justify-between pl-4 bg-blue-600 rounded p-1 bg-gradient-to-tr from-blue-500`}
+        className={` flex justify-between pl-4 bg-blue-600 rounded p-1 bg-gradient-to-tr from-blue-500`}
       >
         <h1 className="text-center text-white font-bold text-md">
           {workout.name ? workout.name : "Untitled"}
