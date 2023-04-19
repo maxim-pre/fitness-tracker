@@ -1,3 +1,9 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { faClipboard } from "@fortawesome/free-solid-svg-icons";
+import { faPersonWalking } from "@fortawesome/free-solid-svg-icons";
+import Footer from "./footer";
+
 import NavLink from "./navLink";
 import Logo from "./logo";
 const Nav = () => {
@@ -7,10 +13,23 @@ const Nav = () => {
       <Logo />
       <hr />
       <nav>
-        <NavLink url={"/exercises"} text={"Exercises"} />
-        <NavLink url={"/"} text={"My workouts"} />
-        <NavLink url={"/new_workout"} text={"Log workout"} />
+        <NavLink
+          url={"/"}
+          text={"My workouts"}
+          icon={<FontAwesomeIcon icon={faBook} className="px-5" />}
+        />
+        <NavLink
+          url={"/new_workout"}
+          text={"Log workout"}
+          icon={<FontAwesomeIcon icon={faClipboard} className="px-5" />}
+        />
+        <NavLink
+          url={"/exercises"}
+          text={"Exercises"}
+          icon={<FontAwesomeIcon icon={faPersonWalking} className="px-5" />}
+        />
       </nav>
+      <Footer />
     </aside>
   );
 };

@@ -8,6 +8,7 @@ import Exercises from "./components/exercises";
 import Workouts from "./components/workouts";
 import NewWorkout from "./components/newWorkout";
 import UpdateWorkout from "./components/updateWorkout";
+import NotFound from "./components/notFound";
 function App() {
   const [nav, setNav] = useState(false);
   const [exercises, setExercises] = useState([]);
@@ -56,7 +57,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen md:flex ">
+    <div className="relative min-h-screen md:flex App">
       {/* mobile Nav */}
       <MobileNavBar nav={nav} setNav={setNav} />
       {nav && <MobileNav nav={nav} setNav={setNav} />}
@@ -78,6 +79,7 @@ function App() {
             path={"update/:id"}
             element={<UpdateWorkout exercises={exercises} />}
           />
+          <Route path={"*"} element={<NotFound />} />
         </Routes>
       </div>
     </div>
