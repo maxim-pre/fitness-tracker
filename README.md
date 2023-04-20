@@ -4,6 +4,8 @@
 
 The fitness tracker is a single-page web application built using React.js. It allows users to track their workouts in the gym and as well as search for exercise information such as the correct form.
 
+Deployment Link: https://fitness-tracker-react.herokuapp.com/
+
 ## Code installation
 
 To access the code on your machine run $git clone https://github.com/maxim-pre/fitness-tracker.git
