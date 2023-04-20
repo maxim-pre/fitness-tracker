@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import Pagination from "./pagination";
 import Workout from "./workout";
 const Workouts = () => {
+  if (!localStorage.getItem("workouts")) {
+    window.localStorage.setItem("workouts", JSON.stringify([]));
+  }
   // state
   const [currentPage, setCurrentPage] = useState(1);
   const [workouts, setWorkouts] = useState(
