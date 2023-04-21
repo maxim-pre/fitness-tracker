@@ -19,6 +19,7 @@ This was an individual project that was developed in 4 days as part of a softwar
 - **JavaScript XML**
 - **Javascript**
 - **Tailwind css**
+- **React.js**
 - **Version control software**
 
   - **Git** software ran locally on my PC to keep track of project changes
