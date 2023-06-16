@@ -1,20 +1,30 @@
 # Fitness Tracker
 
-## Description
+# Description
 
 The fitness tracker is a single-page web application built using React.js. It allows users to track their workouts in the gym and as well as search for exercise information such as the correct form.
 
 Deployment Link: https://fitness-tracker-react.herokuapp.com/
 
-## Code installation
+# Getting Started/Code installation
 
-To access the code on your machine run $git clone https://github.com/maxim-pre/fitness-tracker.git
+To access the code on your machine run:
 
-## Timeframe
+```
+$git clone https://github.com/maxim-pre/fitness-tracker.git
+```
 
-This was an individual project that was developed in 4 days as part of a software engineering bootcamp with GeneralAssembly
+Navigate into repository then run:
 
-## Technology used
+```
+$npm install
+```
+
+# Timeframe
+
+This was an **individual project** that was developed in **4 days** as part of a software engineering bootcamp with **GeneralAssembly**
+
+# Technology used
 
 - **JavaScript XML**
 - **Javascript**
@@ -32,7 +42,28 @@ This was an individual project that was developed in 4 days as part of a softwar
   - **Google Chrome** - Used developer tools for debugging and displaying application
   - **Pesticide** - Outlines rendered components which helped with formatting.
 
-## Planning
+# Brief
+
+## General
+
+- **Build a web application from scratch**, without a starter codebase. Must be your own work.
+- **Use React with create-react-app** to build your application.
+- Plan your application using wireframes and user stories.
+- **Craft a README.md file that explains your app** to the world.
+- **Deploy your app online**, where the rest of the world can access it.
+
+## Technical
+
+- Add a new item to a list.
+- Mark the item as complete/favorite.
+- Edit an item from a list.
+- Remove an item from a list.
+- Clear/Delete all items.
+- Fetch data from at least one 3rd party API using Axios or fetch.
+- Make frequent commits with descriptive messages, explaining your commit.
+- Use React Router to handle multiple pages/views.
+
+# Planning
 
 Planning this project involved drawing wireframes and writing users stories. The wire frames gave me a clearer vison of how the different webpages would look and interact with eachother. The user stories helped me understand how the user would want to use a fitness tracker.
 
@@ -66,7 +97,7 @@ Planning this project involved drawing wireframes and writing users stories. The
 
 - As a user I should be able to delete a logged workout so I can mangage my workouts log.
 
-## Build/Code process
+# Build/Code process
 
 -- webpage structure
 
@@ -167,7 +198,21 @@ workout = {
 
 ```
 
-## Future improvements
+# Challenges
+
+The main challenge during this project was working with the 3rd party API. Getting all the data I wanted was a challenge because not all exercise descriptions were in English and not all the the exercises had images. This resulted in a long fetch function which makes the application slow when its first rendered. Going foreward I would Like to focus more improving the efficiency of fetch requests to improve the user experience.
+
+# Wins
+
+Overall I am very pleased with what I was able to achieve in 4 days. I am especially pleased with my implementation of the form to record a new work out. In my opinion its an intuitive design and it makes it easy for users to construct their exact workout.
+
+<img src="images/fitnesstrackerform.png">
+
+# Key Learnings/Takeaways
+
+Going into this projet I really wanted to focus on improving my styling skills. I found that I really ejoyed using tailwind CSS over vanilla CSS becuase it removes the need for extra files which makes organisation simpler and I much prefered writing styles on the elements themselves.
+
+# Future improvements
 
 - I would Like to add the ability for users to create workout templates so that users dont have to manually create new workouts if they are completing the same workouts at the gym, but can instead change the weight and reps.
 
