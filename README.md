@@ -34,7 +34,7 @@ This was an **individual project** that was developed in **4 days** as part of a
 
   - **Git** software ran locally on my PC to keep track of project changes
 
-  - **GitHub** cload based hosing service allowing me to manage the repository remotely
+  - **GitHub** cloud based hosting service allowing me to manage the repository remotely
 
 - Developer Tools
   - **Ubuntu** used to interact with project
@@ -55,7 +55,7 @@ This was an **individual project** that was developed in **4 days** as part of a
 ## Technical
 
 - Add a new item to a list.
-- Mark the item as complete/favorite.
+- Mark the item as complete/favourite.
 - Edit an item from a list.
 - Remove an item from a list.
 - Clear/Delete all items.
@@ -65,7 +65,7 @@ This was an **individual project** that was developed in **4 days** as part of a
 
 # Planning
 
-Planning this project involved drawing wireframes and writing users stories. The wire frames gave me a clearer vison of how the different webpages would look and interact with eachother. The user stories helped me understand how the user would want to use a fitness tracker.
+Planning this project involved drawing wireframes and writing users stories. The wire frames gave me a clearer vision of how the different webpages would look and interact with each other. The user stories helped me understand how the user would want to use a fitness tracker.
 
 ### WireFrames
 
@@ -83,19 +83,19 @@ Planning this project involved drawing wireframes and writing users stories. The
 
 ### User Stories
 
-- As a user I should be able to search for exercises im interested in to get information about how to perform the exercise properly.
+- As a user I should be able to search for exercises I'm interested in to get information about how to perform the exercise properly.
 
-- As a user I should be able to log all the exercises I performed at the gym too keep track of my workouts.
+- As a user I should be able to log all the exercises I performed at the gym to keep track of my workouts.
 
 - As a user I should be able to log all sets I performed for each exercise at the gym to keep track of my workouts.
 
 - As a user I should be able to log the weight and reps for each set at the gym to keep track of my workouts.
 
-- As a user I should be able to view a list of all my logged workouts in chronilogical order so I can have a record of my workouts
+- As a user I should be able to view a list of all my logged workouts in chronological order so I can have a record of my workouts
 
 - As a user I should be able to update a logged workout in case I recorded the wrong exercise, sets, etc.
 
-- As a user I should be able to delete a logged workout so I can mangage my workouts log.
+- As a user I should be able to delete a logged workout so I can manage my workouts log.
 
 # Build/Code process
 
@@ -121,7 +121,7 @@ function App() {
 Fetching all the exercise data I needed required two api calls.
 
 1. first to the exercises endpoint to grab exercise names and description
-2. second to the exercise images enpoint to grab corresponding images
+2. second to the exercise images endpoint to grab corresponding images
 
 The problem was that not all exercises had images, so I had to filter exercises to the ones that matched a foreign key field with the exercise images called 'exercise base'
 
@@ -200,7 +200,7 @@ workout = {
 
 # Challenges
 
-The main challenge during this project was working with the 3rd party API. Getting all the data I wanted was a challenge because not all exercise descriptions were in English and not all the the exercises had images. This resulted in a long fetch function which makes the application slow when its first rendered. Going foreward I would Like to focus more improving the efficiency of fetch requests to improve the user experience.
+The main challenge during this project was working with the 3rd party API. Getting all the data I wanted was a challenge because not all exercise descriptions were in English and not all the exercises had images. This resulted in a long fetch function which made the application slow when it was first rendered. Going forward I would like to focus more on improving the efficiency of fetch requests to improve the user experience.
 
 # Wins
 
@@ -210,11 +210,11 @@ Overall I am very pleased with what I was able to achieve in 4 days. I am especi
 
 # Key Learnings/Takeaways
 
-Going into this projet I really wanted to focus on improving my styling skills. I found that I really ejoyed using tailwind CSS over vanilla CSS becuase it removes the need for extra files which makes organisation simpler and I much prefered writing styles on the elements themselves.
+Going into this project I really wanted to focus on improving my styling skills. I found that I really enjoyed using tailwind CSS over vanilla CSS because it removes the need for extra files which makes organisation simpler and I much prefer writing styles on the elements themselves.
 
 # Future improvements
 
-- I would Like to add the ability for users to create workout templates so that users dont have to manually create new workouts if they are completing the same workouts at the gym, but can instead change the weight and reps.
+- I would like to add the ability for users to create workout templates so that users don't have to manually create new workouts if they are completing the same workouts at the gym, but can instead change the weight and reps.
 
 ## Resources
 
